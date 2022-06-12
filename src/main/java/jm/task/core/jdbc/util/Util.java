@@ -10,7 +10,6 @@ public  class Util {
     public static Statement statement;
     public static Connection connection;
 
-    public static PreparedStatement preparedStatement;
 
     public static void getConnection() {
         try {
