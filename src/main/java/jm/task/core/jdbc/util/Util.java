@@ -7,11 +7,9 @@ public  class Util {
     private static final String USERNAME = "root";
     private static final String PASSWORD = "Intelcorei5!";
 
-    public static Statement statement;
-    public static Connection connection;
+    private static Connection connection;
 
-
-    public static void getConnection() {
+    public static Connection getConnection() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
@@ -22,14 +20,7 @@ public  class Util {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
-
-    public static void createStatement() {
-        try {
-            statement = connection.createStatement();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        return connection;
     }
 }
 
